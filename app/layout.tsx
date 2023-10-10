@@ -1,6 +1,8 @@
+import { cn } from '@/lib/utils'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
+import NavBar from '@/components/navbar'
 
 const opensans = Open_Sans({ subsets: ['hebrew'] })
 
@@ -15,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={opensans.className}>{children}</body>
+    <html lang="he" dir="rtl">
+      <body className={cn(opensans.className, "overflow-visible flex flex-col items-center min-h-screen")}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   )
 }
