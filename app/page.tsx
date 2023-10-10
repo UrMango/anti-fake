@@ -12,7 +12,7 @@ export default function Home() {
           <div className='flex flex-col items-center justify-center'>
             <div className='flex flex-row w-fit items-center gap-2'>
               <h1 className="text-5xl lg:text-6xl font-extrabold">Fake Filter</h1>
-              <img src={"/assets/logo.svg"}></img>
+              <Image alt='' src={"/assets/logo.svg"}/>
             </div>
             <h2 className="text-2xl lg:text-4xl font-medium">מפיצים את האמת ברשת</h2>
           </div>
