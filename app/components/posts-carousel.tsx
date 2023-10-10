@@ -66,10 +66,10 @@ export default function PostsCarousel({posts} : {posts : any[]}) {
 			{/* // Carousel container */}
 				<div className="flex w-full">
 				{/* // Carousel slide's */}
-					{posts.map((post) => (
+					{posts.map((post, index) => (
 						<div
 						 className="flex flex-none flex-wrap lg:flex-nowrap w-fit mx-2"
-						 key={post.title}
+						 key={index}
 					 	>{post}</div>
 					))}
 				</div>
