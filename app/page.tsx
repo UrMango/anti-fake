@@ -27,21 +27,21 @@ export default function Home() {
       </div>
       <h1 className='text-lg font-medium'>פוסטים מובילים לתמיכה:</h1>
       <PostsCarousel posts={[
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport={false}  platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
-        <Post link='' isSupport platform='' />,
+        <Post key={1} link=''  isSupport platform='' />,
+        <Post key={2} link='' isSupport={false}  platform='' />,
+        <Post key={3} link='' isSupport platform='' />,
+        <Post key={4} link='' isSupport platform='' />,
+        <Post key={5} link='' isSupport platform='' />,
+        <Post key={6} link='' isSupport platform='' />,
+        <Post key={7} link='' isSupport platform='' />,
+        <Post key={8} link='' isSupport platform='' />,
+        <Post key={9} link='' isSupport platform='' />,
+        <Post key={10} link='' isSupport platform='' />,
+        <Post key={11} link='' isSupport platform='' />,
+        <Post key={12} link='' isSupport platform='' />,
+        <Post key={13} link='' isSupport platform='' />,
+        <Post key={14} link='' isSupport platform='' />,
+        <Post key={15} link='' isSupport platform='' />,
       ]} />
     </div>
   )
