@@ -15,3 +15,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 // npx supabase gen types typescript --project-id "wpaztqhaznrhfwlbnfvn" --schema public > types/supabase.ts
 
+// change to rerender
