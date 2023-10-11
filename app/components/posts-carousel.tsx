@@ -61,7 +61,7 @@ export default function PostsCarousel({posts} : {posts : any[]}) {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-		<div className=" mx-auto max-w-6xl px-5">
+		<div className=" mx-auto w-full lg:max-w-6xl px-5">
 			<div className="overflow-hidden" ref={emblaRef}>
 			{/* // Carousel container */}
 				<div className="flex w-full">

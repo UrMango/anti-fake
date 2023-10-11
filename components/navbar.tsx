@@ -1,23 +1,26 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
-import SomeImage from '@/public/fake-filter-logo.jpg'
+import Image from 'next/image';
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 
 export default function NavBar() {
   return (
-    <div className="z-40 w-full flex flex-col items-center bg-background">
-			<div className="w-full max-w-full xl:max-w-[80rem] flex max-xl:px-4 py-2 justify-between items-center">
+    <div dir='ltr' className="z-40 w-full flex flex-col items-center bg-background">
+			<div className="w-full max-w-full xl:max-w-6xl flex max-xl:px-4 py-2 justify-between items-center">
 				<div className="flex gap-2 left-0 items-center">
-					<Button variant={"default"}>הוספת סרטון למאגר</Button>
-					<Button variant={"outline"}>פיד סרטונים</Button>
-					<Button variant={"outline"}>סרטונים ליוצרי תוכן</Button>
-					<div className='relative w-fit h-fit'>
-						<Button variant={"outline"} disabled className='flex flex-col gap-0 leading-none'><p> אימות פייק ניוז בAI</p><p className='font-bold'>בקרוב...</p></Button>
-					</div>
+					{/* <Button variant={"default"}>הוספת סרטון למאגר</Button> */}
+					<Link href={"feed"}><Button variant={"outline"}>Videos Feed</Button></Link>
+					<Button variant={"outline"}>Videos for Content Creators</Button>
+					{/* <div className='relative w-fit h-fit'>
+						<Button variant={"outline"} disabled className='flex flex-col gap-0 leading-none'><p>AI Info Verifi</p><p className='font-bold'>בקרוב...</p></Button>
+					</div> */}
 				</div>
-				<div className="flex items-center gap-2 right-0">
-					<Button variant={"ghost"}>אודות</Button>
+				<div className="flex items-center gap-1 right-0">
+					<Button variant={"ghost"}>About</Button>
+					<Link href={"/"}>
+						<Image alt='' src={"/assets/logo.svg"} width={37} height={40}/>
+					</Link>
 				</div>
 			</div>
 			<Separator />
