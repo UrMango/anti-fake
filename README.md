@@ -45,17 +45,17 @@ Returns a list of posts.
     {
       "id": 1,
       "link": "https://example.com/video1",
-      "isSupport": true,
-      "platform": "YouTube"
+      "action": "repost",
+      "platform": "instagram"
     },
     {
       "id": 2,
       "link": "https://example.com/video2",
-      "isSupport": false,
-      "platform": "Facebook"
+      "action": "report",
+      "platform": "tiktok"
     }
   ],
-  "count": 2
+  "count": 10 // The total number of posts (without considering limit, but with considering type)
 }
 ```
 
