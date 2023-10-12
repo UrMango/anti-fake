@@ -25,6 +25,13 @@ export const getPlatformByUrlDomain = (url: string): string => {
 	}
 }
 
+const formatLink = (link: string): string => {
+    if (!link.startsWith('http')) {
+        return `https://${link}`;
+    }
+    return link;
+}
+
 const postTypes = ["%", "repost", "report"];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -49,6 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(200).json({posts: posts.data?.map(post => {
             return {
                 ...post,
+                link: formatLink(post.link || ""),
                 platform: getPlatformByUrlDomain(post.link || "")
             }
         }) || [], count: posts.count || 0});

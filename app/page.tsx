@@ -14,7 +14,9 @@ export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
 
   useEffect(() => {
-    getPosts(1, setPosts, 10, 0, false);
+    (async () => { 
+      setPosts(await getPosts(1, 10, 0, false));
+    })();
   }, []);
 
   return (
