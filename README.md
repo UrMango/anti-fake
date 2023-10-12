@@ -4,11 +4,7 @@ Fake Filter is a web application, featuring a feed of posts related to the israe
 
 ## Installation
 
-To install the project, first clone the repository:
-
-```
-git clone https://github.com/UrMango/fake-filter.git
-```
+To install the project, first clone the repository. 
 
 Then, navigate to the project directory and install the dependencies:
 
@@ -22,14 +18,14 @@ npm install
 To start the development server, run:
 
 ```
-npm start
+npm run dev
 ```
 
 This will start the server and open the application in your default web browser.
 
 ## API Documentation
 
-### `GET /api/posts`
+### `GET /api/posts/get-posts`
 
 Returns a list of posts.
 
@@ -39,7 +35,7 @@ Returns a list of posts.
 | ----- | ------ | ----------------------------------------------- |
 | limit | number | The maximum number of posts to return (default 20) |
 | skip  | number | The number of posts to skip (default 0)           |
-| type  | number | The type of posts to return (default 0)           |
+| type  | number | The type of posts to return (default 0) 0 - all, 1 - repost, 2 - report          |
 
 #### Response
 
