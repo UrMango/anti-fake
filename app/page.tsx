@@ -8,6 +8,7 @@ import MainLogo from '@/public/assets/logo.svg'
 import { useEffect, useState } from 'react';
 import { getPosts } from './utils/posts';
 import Link from 'next/link';
+import PostSkeleton from '@/components/post-skeleton';
 
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -42,6 +43,23 @@ export default function Home() {
           <Post key={index} link={post.link} isSupport={post.isSupport} platform={post.platform} />
         )
       } />
+      
+      {posts.length == 0 &&
+        <PostsCarousel posts={
+          [
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />,
+            <PostSkeleton />
+          ]
+        } />
+      }
     </div>
   )
 }
