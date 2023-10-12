@@ -68,10 +68,10 @@ export default function Post({ platform, link, isSupport } : { platform : string
 				{
 					isSupport ? 
 					<div className='bg-primary w-full h-16 absolute bottom-0 flex items-center justify-center'>
-						<p dir='ltr' className='text-white font-bold text-lg'>Support this post!</p>
+						<p dir='ltr' className='text-white font-bold text-lg'>SUPPORT THIS POST</p>
 					</div> :
 					<div className='bg-destructive w-full h-16 absolute bottom-0 flex items-center justify-center'>
-						<p dir='ltr' className='text-white font-bold text-lg'>Report this post!</p>
+						<p dir='ltr' className='text-white font-bold text-lg'>REPORT THIS POST</p>
 					</div>
 				}
 			</Card>
