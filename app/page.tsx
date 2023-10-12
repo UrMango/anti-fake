@@ -7,6 +7,8 @@ import Post from '@/components/post';
 import MainLogo from '@/public/assets/logo.svg'
 import { useEffect, useState } from 'react';
 import { getPosts } from './utils/posts';
+import Link from 'next/link';
+
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
 
@@ -29,7 +31,7 @@ export default function Home() {
           <div dir='ltr' className='flex flex-row gap-2 items-center'>
             <h3 className='font-bold'>Quick Look:</h3>
             {/* <Button variant={'default'}>הוספת סרטון למאגר</Button> */}
-            <Button variant={'secondary'}>Videos Feed</Button>
+            <Link href={"/feed"}><Button variant={'secondary'}>Videos Feed</Button></Link>
             <Button variant={'secondary'}>Videos for Content Creators</Button>
           </div>
         </div>

@@ -26,8 +26,9 @@ export const getPlatformByUrlDomain = (url: string): string => {
 }
 
 export const getPosts = async (type : number, setPosts : (posts : any[]) => void, limit : number = 16, skip: number = 0, splitToFours : boolean = true) => {
-	const postRes : any[] = (await axios.get(`/api/posts/get-posts?limit=${limit}&skip=${skip}&type=${type}`)).data;
-	console.log(postRes)
+	const res : any = (await axios.get(`/api/posts/get-posts?limit=${limit}&skip=${skip}&type=${type}`)).data;
+	console.log(res)
+	const postRes : any[] = res.posts;
 	if(splitToFours) {
 		const postRows : any[] = [];
 		for (let i = 0; i < postRes.length; i += 4) {

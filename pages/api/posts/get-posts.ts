@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { supabaseConnection } from '@/app/utils/supabaseConnection';
 
-const postTypes = ["repost", "report"];
+const postTypes = ["%", "repost", "report"];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const {limit = 20, skip = 0, type = 1} = req.query;
+    const {limit = 20, skip = 0, type = 0} = req.query;
 
     try {
         if(
@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             .range(2 + +skip, 2 + +skip + +limit - 1)
             .neq("action", '')
             .eq("active", true)
-            .eq("action", postTypes[+type]);
+            .like("action", postTypes[+type]);
 
         res.status(200).json({posts: posts.data || [], count: posts.count || 0});
     } catch(error) {
