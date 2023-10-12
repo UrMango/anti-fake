@@ -4,6 +4,7 @@ export const getPosts = async (type : number, limit : number = 16, skip: number 
 	const res : any = (await axios.get(`/api/posts/get-posts?limit=${limit}&skip=${skip}&type=${type}`)).data;
 	// console.log(res)
 	const postRes : any[] = res.posts;
+	let isMore = postRes.length >= limit;
 	if(splitToFours) {
 		const postRows : any[] = [];
 		for (let i = 0; i < postRes.length; i += 4) {
@@ -18,7 +19,7 @@ export const getPosts = async (type : number, limit : number = 16, skip: number 
 			}
 		}
 		// console.log(postRows);
-		return postRows;
+		return {posts: postRows, isMore};
 	} else {
 		for (let i = 0; i < postRes.length; i++) {
 			const post = postRes[i];
@@ -26,6 +27,6 @@ export const getPosts = async (type : number, limit : number = 16, skip: number 
 			postRes[i] = { link: post.link, isSupport: post.action == "repost", id: post.id, platform: post.platform };			
 		}
 		// console.log(postRes);
-		return postRes;
+		return {posts: postRes, isMore};
 	}
 };

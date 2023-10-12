@@ -16,16 +16,18 @@ export default function Feed() {
   const [loading, setLoading] = useState(false);
   const loadingRef = useRef(false);
   const [type, setType] = useState(1);
+  const [isMore, setIsMore] = useState(true);
   
   const getPostsLoader = (async (_type : number, _skip : number, _limit : number = 20) => {
     setLoading(true);
     loadingRef.current = true;
-    const newPosts = await getPosts(_type, _limit, _skip);
+    const res = await getPosts(_type, _limit, _skip);
+    setIsMore(res.isMore);
     console.log(posts);
-    console.log(newPosts);
-    let newPosts2 = newPosts;
+    console.log(res.posts);
+    let newPosts2 = res.posts;
     if(_skip != 0)
-      newPosts2 = posts.concat(newPosts);
+      newPosts2 = posts.concat(res.posts);
     setPosts(newPosts2);
     setLoading(false);
     loadingRef.current = false;
@@ -37,7 +39,7 @@ export default function Feed() {
     const scrollHandle = (e : any) => {
       const scrollHeight = e.target?.documentElement.scrollHeight;
       const currentHeight = e.target?.documentElement.scrollTop + window.innerHeight;
-      if(currentHeight >= scrollHeight && loadingRef.current == false) {
+      if(currentHeight >= scrollHeight && loadingRef.current == false && isMore) {
         skipRef.current =  skipRef.current + 20;
         setSkip(skipRef.current);
         console.log(skipRef.current);
@@ -57,7 +59,7 @@ export default function Feed() {
   
   return (
     
-    <div className="w-full xl:w-[80rem] min-h-full flex flex-col items-center text-foreground gap-6 pt-2">
+    <div className="w-full xl:w-[80rem] min-h-full flex flex-col items-center text-foreground gap-6 pt-2 pb-2">
       <Tabs defaultValue='postsSupport' className='flex flex-col items-center justify-center gap-4'>
         <TabsList>
             <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
@@ -104,12 +106,15 @@ export default function Feed() {
             </>
           }
 
-          <PostRow  posts={[
-            <PostSkeleton />,
-            <PostSkeleton />,
-            <PostSkeleton />,
-            <PostSkeleton />,
-          ]} />
+          {
+            isMore && 
+            <PostRow  posts={[
+              <PostSkeleton />,
+              <PostSkeleton />,
+              <PostSkeleton />,
+              <PostSkeleton />,
+            ]} />
+          }
         </TabsContent>
         <TabsContent value='postsSupport' className='flex flex-col gap-4'>            
           {
@@ -151,13 +156,16 @@ export default function Feed() {
               ]} />
             </>
           }
-
-          <PostRow  posts={[
-            <PostSkeleton />,
-            <PostSkeleton />,
-            <PostSkeleton />,
-            <PostSkeleton />,
+          
+          {
+            isMore && 
+            <PostRow  posts={[
+              <PostSkeleton />,
+              <PostSkeleton />,
+              <PostSkeleton />,
+              <PostSkeleton />,
             ]} />
+          }
         </TabsContent>
       </Tabs>
     </div>
