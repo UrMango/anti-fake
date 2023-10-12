@@ -28,7 +28,7 @@ export default function Home() {
             </div>
             <h2 className="text-2xl lg:text-4xl font-medium">Spreading the truth on the web</h2>
           </div>
-            <h3 className='text-xl w-2/3 text-center ' dir='ltr'>In such war, the State of Israel needs everyone's support on social media to help explain the Israeli situation to the world.</h3>
+            <h3 className='text-xl w-2/3 text-center my-5' dir='ltr'>In such war, the State of Israel needs everyone's support on social media to help explain the Israeli situation to the world.</h3>
           <div dir='ltr' className='flex flex-row gap-2 items-center'>
             <h3 className='font-bold'>Quick Look:</h3>
             {/* <Button variant={'default'}>הוספת סרטון למאגר</Button> */}
