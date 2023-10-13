@@ -66,16 +66,16 @@ export default function Feed() {
       <Tabs defaultValue='postsSupport' className='flex flex-col items-center justify-center'>
         <div className='flex flex-row w-full justify-between'>
           <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
-            <Switch checked={bulkMode} onCheckedChange={setBulkMode} />
-            <p>Bulk Mode</p>
+            {/* <Switch checked={bulkMode} onCheckedChange={setBulkMode} />
+            <p>Bulk Mode</p> */}
           </div>
           <TabsList>
               <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
               <TabsTrigger value='postsReport' onClick={ () => {getPostsLoader(2, 0); setPosts([]); setType(2);} }>Post Reports</TabsTrigger>
           </TabsList> 
           <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
-            <Switch />
-            <p>Bulk Mode</p>
+            {/* <Switch />
+            <p>Bulk Mode</p> */}
           </div>   
         </div>
         <TabsContent value='postsReport' className='flex flex-col mt-4 gap-2'>
