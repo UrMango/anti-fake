@@ -6,6 +6,7 @@ import axios from 'axios';
 import {load} from 'cheerio';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { FacebookEmbed, InstagramEmbed, TikTokEmbed } from 'react-social-media-embed';
 
 export default function Post({ platform, link, isSupport } : { platform : string, link : string, isSupport : boolean }) {
 
@@ -54,16 +55,28 @@ export default function Post({ platform, link, isSupport } : { platform : string
 
 	return (
 		<a dir="rtl" href={link} target='_blank'>
-			<Card className='w-72 h-60 lg:h-60 lg:w-56 flex flex-col items-center relative overflow-hidden bg-cover bg-center' style={ { backgroundImage: `url("assets/${getBackground()}")`, backgroundPositionY: "-1.5rem" } } >
-				<div className='py-4 px-4'>
+			<Card className='w-72 h-60 lg:h-60 lg:w-56 flex flex-col items-center relative overflow-hidden bg-primary' >
+				<div className='py-4 px-4 h-full w-full bg-cover bg-center'  style={ { backgroundImage: `url("assets/${getBackground()}")` }}>
+					{/* {
+						platform == "tiktok" &&
+						<TikTokEmbed url={link} placeholderDisabled={true} />
+					} */}
+					{/* {
+						platform == "facebook" &&
+						<FacebookEmbed url={link} />
+					}
+					{
+						platform == "instagram" &&
+						<InstagramEmbed url={link} />
+					} */}
 					{/* <h3 className='text-lg font-medium'>{link}</h3> */}
 				</div>
 				{
 					isSupport ? 
-					<div className='bg-primary w-full h-16 absolute bottom-0 flex items-center justify-center'>
+					<div className=' w-full h-16 bottom-0 flex items-center justify-center'>
 						<p dir='ltr' className='text-white font-bold text-base'>SUPPORT THIS POST</p>
 					</div> :
-					<div className='bg-destructive w-full h-16 absolute bottom-0 flex items-center justify-center'>
+					<div className='bg-destructive w-full h-16 bottom-0 flex items-center justify-center'>
 						<p dir='ltr' className='text-white font-bold text-base'>REPORT THIS POST</p>
 					</div>
 				}

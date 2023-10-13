@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import PostSkeleton from '@/components/post-skeleton';
 import { getPosts } from '../utils/posts';
+import { Switch } from "@/components/ui/switch"
 
 export default function Feed() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -17,6 +18,8 @@ export default function Feed() {
   const loadingRef = useRef(false);
   const [type, setType] = useState(1);
   const [isMore, setIsMore] = useState(true);
+
+  const [bulkMode, setBulkMode] = useState(true);
   
   const getPostsLoader = (async (_type : number, _skip : number, _limit : number = 20) => {
     setLoading(true);
@@ -61,10 +64,20 @@ export default function Feed() {
     
     <div className="w-full xl:w-[80rem] min-h-full flex flex-col items-center text-foreground gap-6 pt-2 pb-2">
       <Tabs defaultValue='postsSupport' className='flex flex-col items-center justify-center'>
-        <TabsList>
-            <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
-            <TabsTrigger value='postsReport' onClick={ () => {getPostsLoader(2, 0); setPosts([]); setType(2);} }>Post Reports</TabsTrigger>
-        </TabsList>     
+        <div className='flex flex-row w-full justify-between'>
+          <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
+            <Switch checked={bulkMode} onCheckedChange={setBulkMode} />
+            <p>Bulk Mode</p>
+          </div>
+          <TabsList>
+              <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
+              <TabsTrigger value='postsReport' onClick={ () => {getPostsLoader(2, 0); setPosts([]); setType(2);} }>Post Reports</TabsTrigger>
+          </TabsList> 
+          <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
+            <Switch />
+            <p>Bulk Mode</p>
+          </div>   
+        </div>
         <TabsContent value='postsReport' className='flex flex-col mt-4 gap-2'>
           {
             posts.map((postRow : any[], index) => (
