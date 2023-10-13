@@ -54,7 +54,7 @@ export default function Post({ platform, link, isSupport } : { platform : string
 
 	return (
 		<a dir="rtl" href={link} target='_blank'>
-			<Card className='h-60 w-56 flex flex-col items-center relative overflow-hidden bg-cover bg-center' style={ { backgroundImage: `url("assets/${getBackground()}")`, backgroundPositionY: "-1.5rem" } } >
+			<Card className='w-72 h-60 lg:h-60 lg:w-56 flex flex-col items-center relative overflow-hidden bg-cover bg-center' style={ { backgroundImage: `url("assets/${getBackground()}")`, backgroundPositionY: "-1.5rem" } } >
 				<div className='py-4 px-4'>
 					{/* <h3 className='text-lg font-medium'>{link}</h3> */}
 				</div>

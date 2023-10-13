@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 export default function PostRow({posts} : {posts : any[]}) {
 
     return (
-        <div className="flex flex-row w-2/3 gap-2">           
+        <div className="flex flex-col lg:flex-row w-2/3 gap-2">           
             {posts.map((post, index) => (
                 <div
                     

@@ -3,6 +3,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function PostSkeleton() {
 	return (
-		<Skeleton className="h-60 w-56" />
+		<Skeleton className="w-72 h-60 lg:h-60 lg:w-56" />
 	)
 }
