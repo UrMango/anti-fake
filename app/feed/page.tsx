@@ -62,7 +62,7 @@ export default function Feed() {
   
   return (
     
-    <div className="w-full xl:w-[80rem] min-h-full flex flex-col items-center text-foreground gap-6 pt-2 pb-2">
+    <div className="w-full xl:w-[80rem] overflow-x-hidden min-h-full flex flex-col items-center text-foreground gap-6 pt-2 pb-2">
       <Tabs defaultValue='postsSupport' className='flex flex-col items-center justify-center'>
         <div className='flex flex-row w-full justify-between'>
           <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
