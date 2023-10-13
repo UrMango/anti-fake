@@ -111,8 +111,10 @@ export default function Feed() {
             <PostRow  posts={[
               <PostSkeleton />,
               <PostSkeleton />,
-              <PostSkeleton />,
-              <PostSkeleton />,
+              <div className='hidden lg-block'>
+                <PostSkeleton />,
+                <PostSkeleton />,
+              </div>
             ]} />
           }
         </TabsContent>
@@ -121,9 +123,9 @@ export default function Feed() {
             posts.map((postRow, index) => (
               <PostRow key={index} posts={[
                 <Post key={1} link={postRow[0].link} isSupport={postRow[0].isSupport} platform={postRow[0].platform} />,
-                postRow.length > 1 ? <Post key={1} link={postRow[1].link} isSupport={postRow[1].isSupport} platform={postRow[1].platform} /> : <PostSkeleton />,
-                postRow.length > 2 ? <Post key={1} link={postRow[2].link} isSupport={postRow[2].isSupport} platform={postRow[2].platform} /> : <PostSkeleton />,
-                postRow.length > 3 ? <Post key={1} link={postRow[3].link} isSupport={postRow[3].isSupport} platform={postRow[3].platform} /> : <PostSkeleton />,
+                postRow.length > 1 ? <Post key={1} link={postRow[1].link} isSupport={postRow[1].isSupport} platform={postRow[1].platform} /> : isMore && <PostSkeleton />,
+                postRow.length > 2 ? <Post key={1} link={postRow[2].link} isSupport={postRow[2].isSupport} platform={postRow[2].platform} /> : isMore && <PostSkeleton />,
+                postRow.length > 3 ? <Post key={1} link={postRow[3].link} isSupport={postRow[3].isSupport} platform={postRow[3].platform} /> : isMore && <PostSkeleton />,
               ]} />
             ))
           }  
@@ -159,11 +161,13 @@ export default function Feed() {
           
           {
             isMore && 
-            <PostRow  posts={[
+            <PostRow posts={[
               <PostSkeleton />,
               <PostSkeleton />,
-              <PostSkeleton />,
-              <PostSkeleton />,
+              <div className='hidden lg-block'>
+                <PostSkeleton />,
+                <PostSkeleton />,
+              </div>
             ]} />
           }
         </TabsContent>

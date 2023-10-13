@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full xl:w-[80rem] min-h-[calc(100vh-3.6rem)] flex flex-col items-center justify-center text-foreground gap-6">
+    <div className="w-full xl:w-[80rem] min-h-[calc(100vh-3.55rem)] flex flex-col items-center justify-center text-foreground gap-6">
       <div className="flex w-full items-center relative gap-0 md:gap-14 px-3 lg:px-0 justify-center">
         <div className=" flex flex-col h-full items-center justify-center gap-2"> 
           <div className='flex flex-col items-center justify-center'>
