@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://fakefilter.vercel.app/',
-    title: 'Fake Filter',
-    description: 'Spreading the truth on the web',
+    title: 'Fake Filter - Spreading the truth on the web',
+    description: "In such war, the State of Israel needs everyone's support on social media to help explain the Israeli situation to the world.",
     siteName: 'Fake Filter',
     images: [
       {
