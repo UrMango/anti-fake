@@ -7,7 +7,7 @@ import { Info, File, Newspaper } from 'lucide-react';
 
 export default function NavBar() {
   return (
-    <div dir='ltr' className="z-40 w-full flex flex-col items-center bg-background">
+    <div dir='ltr' className="z-40 fixed w-full flex flex-col items-center bg-background">
 			<div className="w-full max-w-full xl:max-w-6xl flex max-xl:px-4 py-2 h-14 justify-between items-center">
 				<div className="flex gap-4 left-0 items-center">
 					<Link href={"/"}>
