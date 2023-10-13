@@ -20,12 +20,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full xl:w-[80rem] min-h-[calc(100vh)] flex flex-col items-center justify-center text-foreground gap-6">
+    <div className="w-full xl:w-[80rem] min-h-[calc(100vh)] flex flex-col pt-14 items-center justify-center text-foreground gap-6">
       <div className="flex w-full items-center relative gap-0 md:gap-14 px-3 lg:px-0 justify-center">
         <div className=" flex flex-col h-full items-center justify-center gap-2"> 
           <div className='flex flex-col items-center justify-center'>
             <div className='flex flex-row w-fit items-center gap-2'>
-              <h1 className="text-5xl lg:text-6xl font-extrabold">Fake Filter</h1>
+              <h1 className="text-3xl xs:text-5xl lg:text-6xl font-extrabold text-center">Fake Filter</h1>
               <Image alt='' src={"/assets/logo.svg"} width={73} height={78}/>
             </div>
             <h2 className="text-2xl lg:text-4xl font-medium text-center">Spreading the truth on the web</h2>
