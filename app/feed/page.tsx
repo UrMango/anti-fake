@@ -65,7 +65,7 @@ export default function Feed() {
             <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
             <TabsTrigger value='postsReport' onClick={ () => {getPostsLoader(2, 0); setPosts([]); setType(2);} }>Post Reports</TabsTrigger>
         </TabsList>     
-        <TabsContent value='postsReport' className='flex flex-col mt-4'>
+        <TabsContent value='postsReport' className='flex flex-col mt-4 gap-2'>
           {
             posts.map((postRow : any[], index) => (
               <PostRow key={index} posts={[
@@ -118,7 +118,7 @@ export default function Feed() {
             ]} />
           }
         </TabsContent>
-        <TabsContent value='postsSupport' className='flex flex-col mt-0'>            
+        <TabsContent value='postsSupport' className='flex flex-col mt-0 gap-2'>            
           {
             posts.map((postRow, index) => (
               <PostRow key={index} posts={[
