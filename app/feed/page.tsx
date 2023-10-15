@@ -64,12 +64,12 @@ export default function Feed() {
     
     <div className="w-full xl:w-[80rem] overflow-x-hidden min-h-full flex flex-col items-center text-foreground gap-6 pt-24 pb-2">
       <Tabs defaultValue='postsSupport' className='flex flex-col items-center justify-center'>
-        <div className='flex flex-row w-full justify-between fixed z-30 h-full top-0 pt-16'>
+        <div className='flex flex-row w-full justify-between fixed z-30 h-full top-0 pt-16 pointer-events-none'>
           <div className="flex items-center space-x-2 opacity-0 pointer-events-none">
             {/* <Switch checked={bulkMode} onCheckedChange={setBulkMode} />
             <p>Bulk Mode</p> */}
           </div>
-          <TabsList>
+          <TabsList className='pointer-events-auto'>
               <TabsTrigger value='postsSupport' onClick={ () => {getPostsLoader(1, 0); setPosts([]); setType(1);} }>Post Support</TabsTrigger>
               <TabsTrigger value='postsReport' onClick={ () => {getPostsLoader(2, 0); setPosts([]); setType(2);} }>Post Reports</TabsTrigger>
           </TabsList> 
