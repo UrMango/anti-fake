@@ -1,4 +1,4 @@
-# Fake Filter
+# Fake Filter (Archived)
 
 Fake Filter is a web application, featuring a feed of posts related to the israeli situation from social media platforms that require support and promotion, as well as posts that require reporting and removal.
 
